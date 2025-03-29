@@ -1,0 +1,219 @@
+<!-- Devs: Isabela Perin e Luiz César de Camillo   -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisaar's Machine</title>
+    <link rel="shortcut icon" href="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/722.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+            background-image: url('');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('https://www.chromethemer.com/backgrounds/google/images/nebula-google-background.jpg');
+        }
+
+        .corujao {
+            background: #2e0549ad;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: cursive;
+            font-style: italic;
+            font-size: 65px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .rowlet {
+            width: 50px;
+            height: auto;
+        }
+
+        h3 {
+            font-weight: bolder;
+            font-family: cursive;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+
+        .square {
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 220px;
+            height: 220px;
+            border: 2px solid #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            background-image: url('https://img.freepik.com/vetores-premium/mascote-logotipo-coruja-com-purpel-colorido_50290-218.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        input[type="text"] {
+            padding: 14px;
+            font-size: 18px;
+            width: 70%;
+            border: 2px solid #2e0549;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: 0.3s ease;
+            background-color: #0000006e;
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2e0549;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #2e0549;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 20p20;
+            height: 50px;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        h1:hover {
+            transform: scale(1.0);
+            color: #ffffff;
+        }
+
+        button:hover {
+            background-color: #873bce;
+            transform: scale(1.1);
+            font-weight: bold;
+            color: #ffffff;
+            opacity: 1;
+        }
+
+        .result {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #ffffffa6;
+            padding: 15px;
+            border-radius: 2px;
+            width: 100%;
+            border: 3px solid #1c012c;
+            color: #000000;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="corujao">
+
+        <div class="titulo">
+            <h1>Wisaar's Machine</h1>
+            <img src="https://static.wikia.nocookie.net/58491cf8-d550-4e1a-bdaa-f9dbc82e4f91/scale-to-width/755"
+                alt="logo :D" class="rowlet">
+        </div>
+
+        <h3>Digite um número decimal:</h3>
+
+
+        <div class="input-container">
+            <input id="demo1" type="text" placeholder="Ex: 3">
+            <button onclick="converter()">Converter</button>
+        </div>
+
+
+        <div class="main-container">
+            <div class="square">
+                <h3>Octal</h3>
+                <div id="demo2" class="result"></div>
+            </div>
+
+            <div class="square">
+                <h3>Hexadecimal</h3>
+                <div id="demo3" class="result"></div>
+            </div>
+
+            <div class="square">
+                <h3>Binário</h3>
+                <div id="demo4" class="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function converter() {
+            var decimal = Number(demo1.value);
+
+            demo2.innerHTML = decimal.toString(8);
+            demo3.innerHTML = decimal.toString(16).toUpperCase();
+            demo4.innerHTML = decimal.toString(2);
+        }
+    </script>
+</body>
+
+</html>
